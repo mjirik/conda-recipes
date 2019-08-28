@@ -3,7 +3,8 @@ package:
   version: "0.8.8"
 
 source:
-  git_rev: 06317a49e1b11901694844daaeab6dde39c78f0d
+  git_rev: 037fec2dfd06c0d785e943f6d73d8a9edec3faad
+#  git_rev: 06317a49e1b11901694844daaeab6dde39c78f0d
   git_url: https://github.com/mjirik/pyqtconfig.git
 
 #  patches:
