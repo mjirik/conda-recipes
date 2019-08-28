@@ -1,0 +1,37 @@
+{% set name = "morphsnakes" %}
+{% set version = "0.0.6" %}
+{% set file_ext = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_value = "980279188f3644ac671b05c559412b028f88527802afdd1d46dd6216e7c0b844" %}
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  '{{ hash_type }}': '{{ hash_value }}'
+
+build:
+  number: 0
+  script: 'python setup.py install '
+
+requirements:
+  host:
+    - python
+  run:
+    - python
+
+about:
+  home: The package home page
+  license: UNKNOWN
+  license_family: OTHER
+  license_file: ''
+  summary: Summary of the package
+  description: UNKNOWN
+  doc_url: ''
+  dev_url: ''
+
+extra:
+  recipe-maintainers: ''

@@ -1,0 +1,50 @@
+{% set name = "fibrous" %}
+{% set version = "0.0.2" %}
+{% set file_ext = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_value = "3ae19f9eac02b9e0c08731f7fd818abe8757082168103a28790e65802e1d28b6" %}
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  '{{ hash_type }}': '{{ hash_value }}'
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - numpy
+    - vtk
+    - pyyaml
+    - scipy
+  run:
+    - python
+    - numpy
+    - vtk
+    - pyyaml
+    - scipy
+
+test:
+  imports:
+    - fibrous
+
+about:
+  home: https://github.com//fibrous
+  license: BSD License
+  license_family: BSD
+  license_file: ''
+  summary: Summary of the package
+  description: ''
+  doc_url: ''
+  dev_url: ''
+
+extra:
+  recipe-maintainers: ''
