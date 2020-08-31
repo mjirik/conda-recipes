@@ -1,0 +1,38 @@
+{% set name = "pygco" %}
+{% set version = "0.0.16" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 38c51a61a9835c0c4cc0ff07ee06ddbefcee1fbe84dd8f6abd93c4062a82046a
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - cython
+    - pip
+    - python
+    - numpy
+  run:
+    - cython
+    - python
+    - numpy
+
+about:
+  home: https://github.com/mjirik/gco_python
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: Graph Cut for python
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
