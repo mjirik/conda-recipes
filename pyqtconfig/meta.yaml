@@ -1,10 +1,12 @@
 package:
   name: pyqtconfig
-  version: "0.8.8"
+  version: "0.8.18"
 
 source:
-  git_rev: 041392ddfde183c3a92c46f1215991be479b12bf
+
+#  git_rev: 041392ddfde183c3a92c46f1215991be479b12bf  # 0.8.8
 #  git_rev: 06317a49e1b11901694844daaeab6dde39c78f0d
+  git_rev: f5b7afb7da619d154bb2e8e1e737c3661d3aec5b # 0.8.18
   git_url: https://github.com/mjirik/pyqtconfig.git
 
 #  patches:
